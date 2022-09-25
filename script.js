@@ -11,8 +11,8 @@ function Question(){
         this.operator ='-';
     }
     this.a= Math.floor(Math.random()*100);
-    this.b=255;
-    if(this.operator ===1){
+    this.b= Math.floor(Math.random()*100);
+    if(this.operator ==='-'){
         while(this.a-this.b<0){
             this.b= Math.floor(Math.random()*100);
         }
@@ -30,7 +30,7 @@ function Question(){
             break;
     }
     this.toString =function (){
-        return String(this.a)+String(this.operator)+String(this.b) +"="+"\n";
+        return String(this.a)+String(this.operator)+String(this.b) +"=";
     }
 }
 
@@ -93,15 +93,13 @@ function buildQuestions(){
  */
 function printQuestions(questions){
     let size = questions.length;
-    console.log(size)
     let stringQuestions = [];
     for(let i=0;i<size;i++){
-        stringQuestions[i] = questions[i].toString();
+        stringQuestions[i] = (i+1) +". " +questions[i].toString()+"\n";
     }
-    console.log(stringQuestions);
-    let txtFile = new File(stringQuestions,"questions.txt");
+    let txtFile = new File(stringQuestions,"Exercises.txt");
     let link = document.createElement('a');
-    link.download = "questions.txt";
+    link.download = "Exercises.txt";
     link.href = URL.createObjectURL(txtFile);
     link.click();
 }
@@ -112,15 +110,13 @@ function printQuestions(questions){
  */
 function printAnswers(questions){
     let size = questions.length;
-    console.log(size);
     let stringAnswers = [];
     for(let i =0;i<size;i++){
-        stringAnswers[i] = questions[i].result+ "\n";
-        console.log(stringAnswers[i]);
+        stringAnswers[i] = (i+1) +". "+ questions[i].toString() + questions[i].result+ "\n";
     }
-    let txtFile = new File(stringAnswers,"answers.txt");
+    let txtFile = new File(stringAnswers,"Answers.txt");
     let link = document.createElement('a');
-    link.download = "answers.txt";
+    link.download = "Answers.txt";
     link.href = URL.createObjectURL(txtFile);
     link.click();
 }
