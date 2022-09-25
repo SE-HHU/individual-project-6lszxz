@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    请输入你想生成的算式数量:
+    <input type="number" content="范围为1-100" id="inputNumber">
+    <input type="button" value="确定" onclick="questions = buildQuestions()">
+</div>
+<div>
+    <input type="button" value="生成算式" id = "spawnQuestionFile" disabled onclick="printQuestions(questions)">
+    <input type="button" value="生成答案" id = "spawnAnswerFile" disabled onclick="printAnswers(questions)">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
