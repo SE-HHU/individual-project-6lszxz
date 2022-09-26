@@ -11,8 +11,9 @@
     <input type="button" value="确定" onclick="questions = buildQuestions()">
 </div>
 <div>
-    <input type="button" value="生成算式" id = "spawnQuestionFile" disabled onclick="printQuestions(questions)">
-    <input type="button" value="生成答案" id = "spawnAnswerFile" disabled onclick="printAnswers(questions)">
+    <input type="button" value="生成算式" class="downloadButton" disabled onclick="printQuestions(questions)">
+    <input type="button" value="生成答案" class="downloadButton" disabled onclick="printAnswers(questions)">
+    <input type="button" value="一键下载" class="downloadButton" disabled onclick=" printQuestions(questions); printAnswers(questions);">
 </div>
 
 <script src="script.js"></script>
